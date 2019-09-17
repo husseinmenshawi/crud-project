@@ -1,0 +1,56 @@
+
+<div class="row">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body mt-5 pb-5 text-center">
+      <h1 class="display-4">Todo List</h1>
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <% todo.forEach((todo_item)=>{ %>
+                  <tr>
+                      <td><%= todo_item.id %></td>
+                      <td><%= todo_item.todo_title %></td>
+                      <td>
+                          <a href="/todo/editPage/<%= todo_item.id %>" class="btn btn-primary">Edit</a>
+                          <form class="d-inline" action="/todo/viewTodoById/<%= todo_item.id %>" method="POST">
+                            <input type="submit" value="View" class="btn btn-secondary">
+                          </form>
+                          <form class="d-inline" action="/todo/deleteTodo/<%= todo_item.id %>" method="POST">
+                              <input type="submit" onclick ="deleteTodo()"value="Delete" class="btn btn-danger">
+                          </form>
+
+                      </td>
+                  </tr>
+              <% }) %>
+              <% if(todo.length==0) {%>
+                <h2>No todos yet</h2>
+                <%}%>
+          </tbody>
+      </table>
+      <a href="/" class = "btn btn-secondary"> Back </a>
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+.card{
+  border-radius: 25px;
+}
+
+</style>
+
+<script>
+
+function deleteTodo(){
+  alert('Todo Deleted!')
+}
+
+</script>

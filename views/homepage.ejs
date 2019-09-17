@@ -1,0 +1,35 @@
+
+<div class="row">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body mt-5 pb-5 text-center">
+      <h1 class=" display-4 mb-6"> Welcome to my CRUD project</h1>
+      <form action="/Todo/createTodo" method="POST">
+          <label class="mt-2" for="todoTitle">Todo Title</label>
+          <input class="form-control" type="text" placeholder="Todo Title" name="todo_title">
+          <label for="todoDesc">Todo Description</label>
+          <input class="form-control mb-2" type="text" placeholder="Todo Description" name="todo_desc">
+          <button onclick="TodoCreated()"class="btn btn-primary mb-2" type="submit">Create Todo</button>
+          <a href="/todo/viewTodo" class="btn btn-secondary mb-2">View All Todo</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+
+.card{
+  border-radius: 25px;
+}
+</style>
+
+<script>
+function TodoCreated(){
+  alert("Todo Created!");
+}
+
+
+</script>
+
+
+
+
